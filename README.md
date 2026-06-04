@@ -6,19 +6,16 @@
 - `index.html` - главная страница landing page.
 - `styles.css` - адаптивный дизайн.
 - `main.js` - рендер проектов, галереи и базовая обработка форм.
-- `data/projects.js` - проекты домов и изображения галереи.
-- `admin.html` - локальная админка для добавления проектов, фото и планировок.
-- `backend/server.js` - backend с регистрацией по email, API проектов и загрузкой изображений.
+- `data/projects.js` - fallback-данные проектов.
+- `admin.html` - админка для добавления проектов, фото и планировок.
+- `backend/server.js` - локальный запуск backend.
+- `backend/app.js` - Express app для локального сервера и Vercel serverless.
+- `backend/storage.js` - JSON/Postgres-хранилище.
+- `backend/uploads.js` - local/Vercel Blob загрузка изображений.
+- `api/index.js` - Vercel serverless entrypoint.
+- `vercel.json` - rewrite `/api/*` на serverless backend.
 
-## Как добавить проект
-
-Откройте `data/projects.js`, скопируйте один объект внутри `window.KARKAS_PROJECTS`
-и замените название, площадь, цену, описание и ссылку на изображение.
-
-Формы сейчас работают как фронтенд-заготовка. Для реальной отправки заявок нужно
-подключить почту, CRM, Telegram-бота или backend-обработчик.
-
-## Запуск backend
+## Запуск локально
 
 ```bash
 npm install
@@ -31,10 +28,27 @@ npm start
 ## Админка проектов
 
 Откройте `/admin.html`, зарегистрируйте первый email администратора, затем добавляйте
-проекты, фотографии и планировки. Данные хранятся в `backend/data/db.json`, загруженные
-файлы - в `uploads/`.
+проекты, фотографии и планировки.
 
-Для продакшена задайте переменные окружения:
+Локально данные хранятся в `backend/data/db.json`, загруженные файлы - в `uploads/`.
+
+## Продакшен на Vercel
+
+Backend готов к serverless-запуску через `api/index.js` и `vercel.json`.
+
+Для постоянного хранения на Vercel подключите:
+
+- Postgres/Neon/Supabase с переменной `DATABASE_URL`.
+- Vercel Blob с переменной `BLOB_READ_WRITE_TOKEN`.
+
+Задайте переменные окружения в Vercel Project Settings:
 
 - `JWT_SECRET` - секрет подписи сессий.
 - `ADMIN_INVITE_CODE` - код для регистрации дополнительных администраторов.
+- `DATABASE_URL` - строка подключения к Postgres.
+- `BLOB_READ_WRITE_TOKEN` - токен Vercel Blob для загрузки изображений.
+
+Если `DATABASE_URL` не задан, backend использует локальный JSON-файл
+`backend/data/db.json`. Если `BLOB_READ_WRITE_TOKEN` не задан, файлы сохраняются
+локально в `uploads/`. Для Vercel production эти fallback-режимы не подходят,
+потому что serverless-файловая система не хранит изменения постоянно.
