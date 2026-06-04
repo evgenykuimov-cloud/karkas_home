@@ -1,1 +1,6 @@
 assets/write-test.bin
+assets/.gitkeep
+node_modules/
+backend/data/
+uploads/
+.env

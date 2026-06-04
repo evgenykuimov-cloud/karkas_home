@@ -10,24 +10,30 @@ function syncHeader() {
 
 function renderProjects() {
   const projects = window.KARKAS_PROJECTS || [];
+  renderProjectCards(projects);
+}
+
+function renderProjectCards(projects) {
   projectsRoot.innerHTML = projects
     .map(
-      (project) => `
+      (project) => {
+        const image = project.image || project.photos?.[0]?.src || "";
+        const meta = [project.area, project.floors, project.rooms, project.package].filter(Boolean);
+        return `
         <article class="project-card">
-          <img src="${project.image}" alt="${project.title}" loading="lazy">
+          ${image ? `<img src="${image}" alt="${project.title}" loading="lazy">` : ""}
           <div class="project-body">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <ul class="project-meta" aria-label="Параметры проекта">
-              <li>${project.area}</li>
-              <li>${project.floors}</li>
-              <li>${project.rooms}</li>
+              ${meta.map((item) => `<li>${item}</li>`).join("")}
             </ul>
             <strong class="project-price">${project.price}</strong>
             <a class="button button-primary" href="#contacts">Хочу такой дом</a>
           </div>
         </article>
-      `
+      `;
+      }
     )
     .join("");
 }
@@ -82,3 +88,13 @@ syncHeader();
 renderProjects();
 renderGallery();
 bindForms();
+
+fetch("/api/projects", { credentials: "include" })
+  .then((response) => (response.ok ? response.json() : null))
+  .then((payload) => {
+    if (payload?.projects?.length) {
+      window.KARKAS_PROJECTS = payload.projects;
+      renderProjectCards(payload.projects);
+    }
+  })
+  .catch(() => {});

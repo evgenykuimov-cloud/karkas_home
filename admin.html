@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Админка проектов - Karkas Home</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">Karkas Home</p>
+        <h1>Админка проектов</h1>
+      </div>
+      <nav>
+        <span class="user-badge" data-user-email></span>
+        <a href="index.html">На сайт</a>
+        <button type="button" data-logout>Выйти</button>
+      </nav>
+    </header>
+
+    <section class="auth-shell" data-auth-panel>
+      <form class="panel auth-form" data-auth-form>
+        <input type="hidden" data-auth-mode value="login" />
+        <h2 data-auth-title>Вход в админку</h2>
+        <label data-name-field hidden>
+          <span>Имя</span>
+          <input name="name" placeholder="Евгений" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" required placeholder="admin@example.com" />
+        </label>
+        <label>
+          <span>Пароль</span>
+          <input name="password" type="password" required minlength="8" placeholder="Минимум 8 символов" />
+        </label>
+        <label data-invite-field hidden>
+          <span>Код приглашения</span>
+          <input name="inviteCode" placeholder="Нужен только для второго администратора" />
+        </label>
+        <button type="submit" data-auth-submit>Войти</button>
+        <button type="button" class="ghost" data-auth-toggle>Создать аккаунт</button>
+        <p class="error-line" data-auth-error></p>
+        <p class="hint">Первый зарегистрированный email станет администратором.</p>
+      </form>
+    </section>
+
+    <main class="admin-shell" data-app-panel hidden>
+      <aside class="panel project-list-panel">
+        <div class="panel-heading">
+          <h2>Проекты</h2>
+          <button type="button" data-new-project>Новый</button>
+        </div>
+        <div class="project-list" data-project-list></div>
+        <p class="hint">
+          Проекты сохраняются в backend. Фото и планировки загружаются в папку
+          <code>uploads/</code>.
+        </p>
+      </aside>
+
+      <section class="panel editor-panel">
+        <form class="editor-form" data-editor-form>
+          <div class="form-grid">
+            <label>
+              <span>Название проекта</span>
+              <input name="title" required placeholder="Например, Сканди 124" />
+            </label>
+            <label>
+              <span>Статус</span>
+              <select name="status">
+                <option>Проект</option>
+                <option>Построен</option>
+                <option>В строительстве</option>
+              </select>
+            </label>
+            <label>
+              <span>Площадь</span>
+              <input name="area" placeholder="124 м2" />
+            </label>
+            <label>
+              <span>Этажность</span>
+              <input name="floors" placeholder="1 этаж" />
+            </label>
+            <label>
+              <span>Комнаты</span>
+              <input name="rooms" placeholder="3 спальни" />
+            </label>
+            <label>
+              <span>Стоимость</span>
+              <input name="price" placeholder="от 6,2 млн ₽" />
+            </label>
+            <label>
+              <span>Комплектация</span>
+              <input name="package" placeholder="Теплый контур / под ключ" />
+            </label>
+            <label>
+              <span>Срок строительства</span>
+              <input name="buildTime" placeholder="70 дней" />
+            </label>
+          </div>
+
+          <label>
+            <span>Описание</span>
+            <textarea name="description" rows="4" placeholder="Короткое продающее описание проекта"></textarea>
+          </label>
+
+          <div class="split-grid">
+            <label>
+              <span>Особенности, через запятую</span>
+              <textarea name="features" rows="4" placeholder="кухня-гостиная, терраса, мастер-спальня"></textarea>
+            </label>
+            <label>
+              <span>Технические параметры, через запятую</span>
+              <textarea name="specs" rows="4" placeholder="фундамент сваи, утепление 200 мм, кровля металлочерепица"></textarea>
+            </label>
+          </div>
+
+          <div class="media-grid">
+            <section class="media-box">
+              <div>
+                <h3>Фотографии</h3>
+                <p>Первое фото будет обложкой проекта.</p>
+              </div>
+              <input type="file" accept="image/*" multiple data-photo-input />
+              <div class="media-preview" data-photo-preview></div>
+            </section>
+            <section class="media-box">
+              <div>
+                <h3>Планировки</h3>
+                <p>Можно загрузить планы этажей, схемы и разрезы.</p>
+              </div>
+              <input type="file" accept="image/*" multiple data-plan-input />
+              <div class="media-preview" data-plan-preview></div>
+            </section>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Сохранить проект</button>
+            <button type="button" class="ghost" data-delete>Удалить</button>
+            <span data-save-status></span>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel preview-panel">
+        <h2>Превью карточки</h2>
+        <article class="project-preview" data-preview></article>
+      </aside>
+    </main>
+
+    <script src="data/projects.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
