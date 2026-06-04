@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Karkas Home - каркасные дома под ключ</title>
+    <meta
+      name="description"
+      content="Строительство каркасных домов под ключ: проекты, расчет стоимости, технология, этапы работ и реализованные объекты."
+    />
+    <meta
+      name="keywords"
+      content="каркасные дома, строительство каркасных домов, дом под ключ, проекты домов, каркасный дом цена"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Karkas Home - каркасные дома под ключ" />
+    <meta
+      property="og:description"
+      content="Современные каркасные дома с прозрачной сметой, контролем этапов и гарантией на работы."
+    />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" />
+    <meta name="theme-color" content="#111813" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Karkas Home",
+        "description": "Строительство каркасных домов под ключ",
+        "areaServed": "Россия",
+        "url": "https://github.com/evgenykuimov-cloud/karkas_home",
+        "telephone": "+7 000 000-00-00",
+        "priceRange": "$$",
+        "serviceType": "Строительство каркасных домов"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Karkas Home">
+        <span class="brand-mark">KH</span>
+        <span>Karkas Home</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Открыть меню" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#projects">Проекты</a>
+        <a href="#technology">Технология</a>
+        <a href="#stages">Этапы</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="header-phone" href="tel:+70000000000">+7 000 000-00-00</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Первый экран">
+        <picture>
+          <source
+            media="(max-width: 720px)"
+            srcset="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82"
+            alt="Современный каркасный дом с панорамными окнами"
+          />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Каркасные дома под ключ</p>
+          <h1>Дом, который выглядит основательно еще до первой встречи</h1>
+          <p class="hero-lead">
+            Проектируем и строим теплые каркасные дома с понятной сметой,
+            фиксированными этапами и фотоотчетами на каждом ключевом узле.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#calculator">Рассчитать стоимость</a>
+            <a class="button button-secondary" href="#projects">Смотреть проекты</a>
+          </div>
+          <dl class="hero-stats">
+            <div>
+              <dt>8 лет</dt>
+              <dd>в частном домостроении</dd>
+            </div>
+            <div>
+              <dt>70+</dt>
+              <dd>построенных домов</dd>
+            </div>
+            <div>
+              <dt>5 лет</dt>
+              <dd>гарантия на работы</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="lead-band" id="calculator" aria-label="Быстрый расчет">
+        <div class="section-inner lead-band-grid">
+          <div>
+            <p class="eyebrow">Расчет за 1 день</p>
+            <h2>Получите предварительную смету по вашему участку и планировке</h2>
+          </div>
+          <form class="capture-form compact" data-form>
+            <label>
+              <span>Телефон</span>
+              <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required />
+            </label>
+            <label>
+              <span>Площадь дома</span>
+              <select name="area" required>
+                <option value="">Выберите</option>
+                <option>до 80 м2</option>
+                <option>80-120 м2</option>
+                <option>120-180 м2</option>
+                <option>180+ м2</option>
+              </select>
+            </label>
+            <button class="button button-dark" type="submit">Получить расчет</button>
+            <p class="form-note" data-form-note></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Проекты домов</p>
+            <h2>Планировки, которые легко адаптировать под участок и бюджет</h2>
+            <p>
+              Каждый проект можно изменить по площади, комплектации, фасаду и инженерии.
+              На первой консультации подберем решение под участок, семью и планируемый бюджет.
+            </p>
+          </div>
+          <div class="projects-grid" data-projects></div>
+        </div>
+      </section>
+
+      <section class="section technology" id="technology">
+        <div class="section-inner two-column">
+          <div class="sticky-copy">
+            <p class="eyebrow">Технология строительства</p>
+            <h2>Каркас собирается как инженерная система, а не как набор досок</h2>
+            <p>
+              Мы заранее фиксируем пирог стен, узлы примыканий, защиту от влаги,
+              вентиляционные зазоры и контроль геометрии. Это снижает риск переделок
+              и делает результат предсказуемым.
+            </p>
+            <a class="button button-primary" href="#contacts">Обсудить технологию</a>
+          </div>
+          <div class="feature-list">
+            <article>
+              <span>01</span>
+              <h3>Сухой силовой каркас</h3>
+              <p>Калиброванная древесина, расчет нагрузок, контроль шага стоек и проемов.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Теплый контур</h3>
+              <p>Утепление без мостиков холода, пароизоляция изнутри и ветрозащита снаружи.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Фасад и кровля</h3>
+              <p>Вентилируемые фасады, надежные примыкания, водосточная система и подшивка.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Инженерия</h3>
+              <p>Закладываем трассы отопления, электрики, воды и вентиляции до чистовой отделки.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted" id="stages">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Этапы работы</p>
+            <h2>Путь к стройке без хаоса и неопределенности</h2>
+          </div>
+          <ol class="timeline">
+            <li>
+              <h3>Заявка и вводные</h3>
+              <p>Уточняем участок, состав семьи, желаемую площадь, бюджет и сроки.</p>
+            </li>
+            <li>
+              <h3>Проект и смета</h3>
+              <p>Подбираем планировку, считаем комплектацию, фиксируем материалы и объем работ.</p>
+            </li>
+            <li>
+              <h3>Договор и график</h3>
+              <p>Закрепляем цену, этапы оплаты, сроки поставок и контрольные точки.</p>
+            </li>
+            <li>
+              <h3>Строительство</h3>
+              <p>Ведем объект по чек-листам, отправляем фотоотчеты и закрываем этапы актами.</p>
+            </li>
+            <li>
+              <h3>Сдача дома</h3>
+              <p>Проводим финальную приемку, передаем документы и гарантийные обязательства.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Галерея</p>
+            <h2>Дома, фасады и детали, которые формируют первое впечатление</h2>
+          </div>
+          <div class="gallery-grid" data-gallery></div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-inner about-grid">
+          <div class="about-photo">
+            <img
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+              alt="Строительная команда на объекте"
+            />
+          </div>
+          <div>
+            <p class="eyebrow">О компании</p>
+            <h2>Строим так, чтобы заказчик понимал, за что платит</h2>
+            <p>
+              Karkas Home ведет строительство частных домов под ключ: от подбора
+              проекта и сметы до сдачи теплого контура, фасада, кровли и инженерии.
+              Мы показываем решения до монтажа, фиксируем комплектацию и держим связь
+              с заказчиком на всех этапах.
+            </p>
+            <div class="trust-grid">
+              <div><strong>Поэтапная оплата</strong><span>после приемки работ</span></div>
+              <div><strong>Фотоотчеты</strong><span>по ключевым узлам</span></div>
+              <div><strong>Понятная смета</strong><span>без скрытых позиций</span></div>
+              <div><strong>Гарантия</strong><span>на конструктив и монтаж</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted" id="objects">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Реализованные объекты</p>
+            <h2>Примеры решений для постоянного проживания и загородного отдыха</h2>
+          </div>
+          <div class="objects-grid">
+            <article>
+              <img
+                src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80"
+                alt="Каркасный дом в лесном окружении"
+              />
+              <div>
+                <h3>Дом 126 м2, теплый контур</h3>
+                <p>Фундамент, каркас, утепление, кровля, фасад, окна. Срок работ - 74 дня.</p>
+              </div>
+            </article>
+            <article>
+              <img
+                src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80"
+                alt="Одноэтажный дом с террасой"
+              />
+              <div>
+                <h3>Дом 94 м2 с террасой</h3>
+                <p>Одноэтажная планировка для семьи, кухня-гостиная, три спальни, котельная.</p>
+              </div>
+            </article>
+            <article>
+              <img
+                src="https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&w=900&q=80"
+                alt="Современный загородный дом"
+              />
+              <div>
+                <h3>Дом 164 м2 под отделку</h3>
+                <p>Двухэтажный дом с вторым светом, усиленной кровлей и панорамным остеклением.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contacts" id="contacts">
+        <div class="section-inner contacts-grid">
+          <div>
+            <p class="eyebrow">Контакты и заявка</p>
+            <h2>Расскажите, какой дом нужен, и мы предложим понятный первый шаг</h2>
+            <p>
+              Можно начать с готового проекта, эскиза, ссылки на понравившийся дом
+              или просто с площади и бюджета. Ответим с перечнем решений и ориентиром по стоимости.
+            </p>
+            <div class="contact-lines">
+              <a href="tel:+70000000000">+7 000 000-00-00</a>
+              <a href="mailto:hello@karkas-home.ru">hello@karkas-home.ru</a>
+              <span>Ежедневно 09:00-20:00</span>
+            </div>
+          </div>
+          <form class="capture-form contact-form" data-form>
+            <label>
+              <span>Ваше имя</span>
+              <input type="text" name="name" placeholder="Имя" required />
+            </label>
+            <label>
+              <span>Телефон</span>
+              <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required />
+            </label>
+            <label>
+              <span>Что нужно построить</span>
+              <textarea name="message" rows="4" placeholder="Площадь, этажность, участок, сроки"></textarea>
+            </label>
+            <button class="button button-dark" type="submit">Отправить заявку</button>
+            <p class="form-note" data-form-note></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-grid">
+        <p>Karkas Home - строительство каркасных домов под ключ</p>
+        <a href="#top">Наверх</a>
+      </div>
+    </footer>
+
+    <script src="data/projects.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
