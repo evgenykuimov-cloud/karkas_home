@@ -292,6 +292,11 @@ h3 {
   padding: clamp(72px, 9vw, 128px) 0;
 }
 
+section[id],
+.lead-band[id] {
+  scroll-margin-top: 92px;
+}
+
 .section-inner {
   width: min(1160px, calc(100% - 36px));
   margin: 0 auto;
